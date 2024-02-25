@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=h1, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Agendador de Tarefas</title>
+  </head>
+  <body>
+    <main>
+      <div class="agendador-container">
+        <h1>AGENDA</h1>
+        <i><img src="agenda.svg" alt="" /></i>
+        <form onsubmit="return adicionarTarefa()">
+          <label for="descricao">O que precisa ser feito?</label>
+          <input
+            type="text"
+            placeholder="digite algo"
+            id="descricao"
+            name="descricao"
+            oninput="verificarCampos()"
+          />
+          <label for="prazo">Até quando precisa ser feito?</label>
+          <input
+            type="date"
+            id="prazo"
+            name="prazo"
+            oninput="verificarCampos()"
+          />
+          <label for="prioridade"
+            >Qual é o nível de Prioridade?</label
+          >
+          <select
+            id="prioridade"
+            name="prioridade"
+            oninput="verificarCampos()"
+          >
+            <option value="Não importante">Não importante</option>
+            <option value="Importante">Importante</option>
+            <option value="Urgente">Urgente</option>
+          </select>
+          <input
+            type="submit"
+            value="ENVIAR"
+            class="enviar"
+            id="enviar"
+            disabled="true"
+          />
+        </form>
+      </div>
+
+      <div class="tarefas-container">
+        <h1>LISTA DE TAREFAS</h1>
+        <i><img src="tarefas.svg" alt="" /></i>
+        <table id="tabela">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Prazo</th>
+              <th>Nível de Prioridade</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

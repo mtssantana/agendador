@@ -1,0 +1,187 @@
+:root {
+  --cinza-0: rgb(255, 255, 255);
+  --cinza-100: rgb(225, 225, 230);
+  --cinza-200: rgb(50, 50, 56);
+  --cinza-300: rgb(18, 18, 20);
+  --verde-0: rgb(224, 252, 243);
+  --verde-100: rgb(0, 179, 126);
+  --verde-200: rgb(0, 154, 108);
+  --verde-300: rgb(0, 114, 80);
+  --roxo-100: rgb(102, 0, 186);
+  --roxo-200: rgb(63, 0, 115);
+  --fonte-principal: 'Roboto';
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  background-color: var(--cinza-200);
+  font-family: var(--fonte-principal);
+  color: var(--cinza-300);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 4rem;
+}
+
+label {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+input {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  transition: border 0.3s;
+}
+
+select {
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 0.5rem;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  transition: border 0.3s;
+}
+
+input:focus,
+select:focus {
+  border: 2px solid var(--roxo-100);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2rem 0 1rem;
+}
+
+i > img {
+  width: 5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0 1rem;
+  overflow-y: auto;
+  background-color: var(--cinza-0);
+}
+
+table > tbody {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+thead th,
+td {
+  text-align: center;
+  border: 1px solid var(--cinza-300);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+th {
+  cursor: pointer;
+}
+
+thead {
+  background-color: var(--verde-0);
+  color: var(--cinza-300);
+}
+
+th {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+td {
+  font-size: 1.25rem;
+}
+
+.enviar {
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  color: var(--cinza-100);
+  background-color: var(--verde-200);
+  transition: background-color 0.3s;
+}
+
+.enviar:hover {
+  background-color: var(--verde-100);
+}
+
+.enviar:focus {
+  border: 2px solid transparent;
+}
+
+.enviar:disabled {
+  cursor: not-allowed;
+  background-color: var(--verde-300);
+}
+
+.agendador-container {
+  align-items: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: var(--cinza-100);
+}
+
+.tarefas-container {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  overflow: auto;
+  background-color: var(--cinza-100);
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+
+  main {
+    flex-direction: row;
+  }
+
+  .agendador-container {
+    width: 70%;
+    max-height: 620px;
+  }
+
+  .tarefas-container {
+    margin-top: 0;
+    width: 100%;
+    max-height: 620px;
+  }
+}
